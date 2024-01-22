@@ -1,0 +1,35 @@
+.section {
+   display: flex;
+   align-items: center;
+   gap: 20px; 
+}
+.input {
+  background: #191919;
+  border: none;
+  outline: none;
+  appearance: none;
+  padding:20px 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 15px;
+  width: 100%;
+}
+.button {
+    background: #502bf3;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    outline: none;
+    appearance: none;
+    border: none;
+    border-radius: 15px;
+    padding:20px 30px;
+    transition: 0.2s all ease-in-out;
+}
+.button:active {
+    transform: scale(0.9);
+}
+.button:hover {
+    background: #765af5;
+}
