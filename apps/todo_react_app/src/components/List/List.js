@@ -5,8 +5,15 @@ import { Card } from "../Card";
 const List = ({ list, setList }) => {
   return (
     <section className={styles.section}>
-      {list.map(({ text, id }, index) => (
-        <Card key={index} text={text} id={id} list={list} setList={setList} />
+      {list.map(({ label, id }, index) => (
+        <Card
+          key={index}
+          index={index + 1}
+          label={label}
+          id={id}
+          list={list}
+          setList={setList}
+        />
       ))}
     </section>
   );

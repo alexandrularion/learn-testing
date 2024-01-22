@@ -6,25 +6,3 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
-main {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    padding: 50px 0;
-}
-
-.layout {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 1000px;
-}
-
-.heading {
-    font-size: 30px;
-    font-weight: 700;
-    color: #fff;
-}

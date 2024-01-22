@@ -9,7 +9,7 @@ const Add = ({ setList, list }) => {
     const id = Math.random().toString(16).slice(2);
 
     // concatenate the current list, and adding the new item
-    setList([...list, { text: value, id: id }]);
+    setList([...list, { label: value, id: id }]);
 
     // reset the value of the input to ""
     setValue("");

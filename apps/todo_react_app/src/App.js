@@ -2,17 +2,19 @@ import { Add } from "./components/Add";
 import "./App.css";
 import React from "react";
 import { List } from "./components/List";
+import { Layout } from "./components/Layout";
 
 function App() {
+  /**
+   * List of objects
+   * Each object have the following form: { label: 'Hello World', id: 123123123 }
+   */
   const [list, setList] = React.useState([]);
   return (
-    <main>
-      <div className="layout">
-        <h1 className="heading">Todo React App</h1>
-        <Add setList={setList} list={list} />
-        <List setList={setList} list={list} />
-      </div>
-    </main>
+    <Layout>
+      <Add setList={setList} list={list} />
+      <List setList={setList} list={list} />
+    </Layout>
   );
 }
 
