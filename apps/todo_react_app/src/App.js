@@ -9,7 +9,7 @@ function App() {
     <main>
       <div className="layout">
         <h1 className="heading">Todo React App</h1>
-        <Add setList={setList} />
+        <Add setList={setList} list={list} />
         <List setList={setList} list={list} />
       </div>
     </main>
