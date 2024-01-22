@@ -1,19 +1,16 @@
 import { Add } from "./components/Add";
-import { Card } from "./components/Card";
 import "./App.css";
 import React from "react";
+import { List } from "./components/List";
 
 function App() {
   const [list, setList] = React.useState([]);
   return (
     <main>
       <div className="layout">
+        <h1 className="heading">Todo React App</h1>
         <Add setList={setList} />
-        <section className="items">
-          {list.map(({ text, id }, index) => (
-            <Card key={index} text={text} id={id} setList={setList} />
-          ))}
-        </section>
+        <List setList={setList} list={list} />
       </div>
     </main>
   );

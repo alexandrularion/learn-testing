@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Add from "./Add";
 
-it("should render the Add component", () => {
+it("should render the Add component and display content", () => {
   render(<Add />);
 
   const section = screen.getByTestId("section");

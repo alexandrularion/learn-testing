@@ -1,7 +1,7 @@
 
 .section {
-    display: grid;
-    grid-template-columns: 80% 20%;
+    display: flex;
+    justify-content: space-between;
     padding:20px 15px;
     background: #191919;
     border-radius: 15px;
@@ -16,6 +16,6 @@
 
 .buttons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
 }

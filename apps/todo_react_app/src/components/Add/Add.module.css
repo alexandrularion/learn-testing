@@ -26,10 +26,15 @@
     border-radius: 15px;
     padding:20px 30px;
     transition: 0.2s all ease-in-out;
+    cursor: pointer;
 }
 .button:active {
     transform: scale(0.9);
 }
 .button:hover {
     background: #765af5;
+}
+.button:disabled {
+    opacity: 0.6;
+    pointer-events: none;
 }
