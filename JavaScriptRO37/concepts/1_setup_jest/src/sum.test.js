@@ -16,6 +16,10 @@ describe("when calling the sum function", () => {
   });
 
   it("should return 0 if a or b params are NaN", () => {
+    const mockCheckIfValid = jest.fn().mockImplementation(() => false);
     expect(sumModule.sum(NaN, NaN)).toBe(0);
+    mockCheckIfValid();
+    expect(mockCheckIfValid).toHaveBeenCalledTimes(1);
+    expect(mockCheckIfValid)(1);
   });
 });
