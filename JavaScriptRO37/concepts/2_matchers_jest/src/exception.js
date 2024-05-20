@@ -1,13 +1,11 @@
-const loadAssets = () => {
+const loadAssets = (loadingPercent) => {
   // my code
-  let loadingPercent = 100;
-  return new Promise((resolve, reject) => {
-    if (loadingPercent === 100) {
-      resolve(loadingPercent);
-    } else {
-      reject("Can't load all the assets.");
-    }
-  });
+  if (loadingPercent === 100) {
+    console.log("Assets were loaded.");
+  } else {
+    console.log("Can't load all the assets.");
+    throw new Error();
+  }
 };
 
 module.exports = {

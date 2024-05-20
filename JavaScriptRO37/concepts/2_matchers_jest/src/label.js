@@ -6,6 +6,9 @@
  * @returns {string}                        i.e. "Profile of - John Doe, Jane Doe"
  */
 const getLabel = (text, replacements, identifier = "{text}") => {
+  if (typeof text !== "string") {
+    throw new Error("The text param must be a string.");
+  }
   let result = text;
   replacements.forEach((word) => {
     result = result.replace(identifier, String(word));
