@@ -1,0 +1,14 @@
+{
+  "name": "2_jest_matchers",
+  "version": "1.0.0",
+  "description": "This is an example project to showcase the jest library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Alexandru Larion",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
