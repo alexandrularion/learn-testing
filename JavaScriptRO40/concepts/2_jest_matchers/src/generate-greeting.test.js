@@ -11,6 +11,8 @@ test("when calling generateGreeting should receive the right text if user is def
 
   expect(text).toMatch(/Dorel Popescu/);
   expect(text).toMatch(/Welcome back./);
+  expect(text).toBeTruthy();
+  expect(text).not.toBeNull();
 });
 
 test("when calling generateGreent should not receive the right text if user is undefined", () => {

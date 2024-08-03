@@ -8,7 +8,7 @@ const createUserProfile = (id, firstName, lastName, email) => {
     contact: {
       email,
     },
-    createdAt: new Date(),
+    createdAt: "03/08/2024",
   };
 };
 
