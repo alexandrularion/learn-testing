@@ -5,6 +5,6 @@ describe("toThrow Matcher", () => {
     function compileCode() {
       throw new Error("Compilation error");
     }
-    // Your test code here
+    expect(compileCode).toThrow("Compilation error");
   });
 });

@@ -3,6 +3,6 @@
 describe("toBe Matcher", () => {
   test("checks if total is 100", () => {
     const total = 100;
-    // Your test code here
+    expect(total).toBe(100);
   });
 });

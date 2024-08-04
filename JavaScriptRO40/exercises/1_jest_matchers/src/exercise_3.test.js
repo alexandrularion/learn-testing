@@ -3,6 +3,6 @@
 describe("toBeNull Matcher", () => {
   test("checks if data is null", () => {
     const data = null;
-    // Your test code here
+    expect(data).toBeNull();
   });
 });

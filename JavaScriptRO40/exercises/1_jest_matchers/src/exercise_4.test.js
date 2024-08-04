@@ -3,6 +3,6 @@
 describe("toContain Matcher", () => {
   test('checks if shoppingList contains "milk"', () => {
     const shoppingList = ["bread", "milk", "eggs"];
-    // Your test code here
+    expect(shoppingList).toContain("milk");
   });
 });
