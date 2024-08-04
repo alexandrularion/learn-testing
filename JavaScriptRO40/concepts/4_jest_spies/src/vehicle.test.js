@@ -34,4 +34,27 @@ describe("when testing vehicle functionality", () => {
 
     expect(vehicle1.brakeUsage).toBe(0);
   });
+
+  test("should turn on the ac", () => {
+    const spy = jest.spyOn(vehicle1, "turnOnAc");
+    vehicle1.turnOnAc();
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(vehicle1.acStatus).toBe("on");
+  });
+
+  test("should turn off the ac", () => {
+    const spy = jest.spyOn(vehicle1, "turnOffAc");
+    vehicle1.turnOffAc();
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(vehicle1.acStatus).toBe("off");
+  });
+
+  test("should steer vehicle", () => {
+    const spy = jest.spyOn(vehicle1, "doDirection");
+    vehicle1.doDirection("left");
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(vehicle1.steeringWheelDirection).toBe("left");
+    vehicle1.doDirection("centered");
+    expect(vehicle1.steeringWheelDirection).toBe("centered");
+  });
 });
