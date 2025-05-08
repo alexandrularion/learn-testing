@@ -1,14 +1,15 @@
 ### 🔹 Task 1: Test a Sum Function with `toBe`  
 **Function:**
 ```js
-export function sum(a, b) {
+function sum(a, b) {
   return a + b;
 }
+module.exports = sum;
 ```
 
 **Test:**
 ```js
-import { sum } from './sum';
+const sum = require('./sum');
 
 test('adds 3 + 4 to equal 7', () => {
   // Write the correct matcher here
@@ -22,14 +23,15 @@ test('adds 3 + 4 to equal 7', () => {
 ### 🔹 Task 2: Test Object Equality with `toEqual`  
 **Function:**
 ```js
-export function getUser() {
+function getUser() {
   return { name: 'Alice', age: 25 };
 }
+module.exports = getUser;
 ```
 
 **Test:**
 ```js
-import { getUser } from './getUser';
+const getUser = require('./getUser');
 
 test('returns correct user object', () => {
   // Write the correct matcher here
@@ -43,14 +45,15 @@ test('returns correct user object', () => {
 ### 🔹 Task 3: Check for Truthy Value  
 **Function:**
 ```js
-export function isAvailable() {
+function isAvailable() {
   return true;
 }
+module.exports = isAvailable;
 ```
 
 **Test:**
 ```js
-import { isAvailable } from './isAvailable';
+const isAvailable = require('./isAvailable');
 
 test('returns a truthy value', () => {
   // Write the correct matcher here
@@ -64,14 +67,15 @@ test('returns a truthy value', () => {
 ### 🔹 Task 4: Check for Falsy Value  
 **Function:**
 ```js
-export function getPrice() {
+function getPrice() {
   return 0;
 }
+module.exports = getPrice;
 ```
 
 **Test:**
 ```js
-import { getPrice } from './getPrice';
+const getPrice = require('./getPrice');
 
 test('returns a falsy value', () => {
   // Write the correct matcher here
@@ -85,14 +89,15 @@ test('returns a falsy value', () => {
 ### 🔹 Task 5: Check if Array Contains an Item  
 **Function:**
 ```js
-export function getFruits() {
+function getFruits() {
   return ['apple', 'banana', 'cherry'];
 }
+module.exports = getFruits;
 ```
 
 **Test:**
 ```js
-import { getFruits } from './getFruits';
+const getFruits = require('./getFruits');
 
 test('contains banana in the list', () => {
   // Write the correct matcher here
