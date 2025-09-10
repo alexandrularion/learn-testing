@@ -1,4 +1,4 @@
-const { bankGreeting } = require("./index"); // Common JS Import
+const { bankGreeting, withdrawMoney } = require("./index"); // Common JS Import
 
 describe("when calling bankGreeting function", () => {
   // Inainte de fiecare test
@@ -43,5 +43,26 @@ describe("when calling bankGreeting function", () => {
   test("should throw an error if userName parameter is missing", () => {
     expect(() => bankGreeting()).toThrow();
     expect(() => bankGreeting()).toThrow("userName parameter is missing");
+  });
+});
+
+describe("when calling withdrawMoney function", () => {
+  it("should throw an error when amount is set to 0", () => {
+    expect.assertions(2); // ne asteptam sa avem 2 apeluri la functia expect
+    expect(() => withdrawMoney(2000, 0)).toThrow();
+    expect(() => withdrawMoney(2000, 0)).toThrow("Invalid withdraw amount");
+  });
+  it("should throw an error when balance is less than amount", () => {
+    expect.assertions(2);
+    expect(() => withdrawMoney(2000, 3000)).toThrow();
+    expect(() => withdrawMoney(2000, 3000)).toThrow("Insufficient founds");
+  });
+  it("should withdraw and return new balance when having enough money", () => {
+    expect.assertions(2);
+
+    const result = withdrawMoney(10000, 2000);
+
+    expect(result).toEqual(8000); // .toEqual() functioneaza la fel ca .toBe()
+    expect(result).toBeLessThan(10000);
   });
 });

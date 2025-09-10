@@ -1,4 +1,4 @@
-// String
+// String, Exceptions
 
 function bankGreeting(userName) {
   if (!userName) {
@@ -20,15 +20,26 @@ function bankGreeting(userName) {
   }
 }
 
-// Number
+// Number, Exceptions
+const withdrawMoney = (balance, amount) => {
+  if (amount === 0) {
+    throw new Error("Invalid withdraw amount");
+  }
+  if (balance < amount) {
+    throw new Error("Insufficient founds");
+  }
+
+  const newBalance = balance - amount;
+
+  return newBalance;
+};
 
 // Truthy / falsy
 
 // Array
 
-// Exceptions
-
 // Common JS Export
 module.exports = {
   bankGreeting,
+  withdrawMoney,
 };
