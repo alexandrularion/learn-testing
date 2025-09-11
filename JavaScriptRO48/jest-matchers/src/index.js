@@ -34,12 +34,35 @@ const withdrawMoney = (balance, amount) => {
   return newBalance;
 };
 
-// Truthy / falsy
+// Array, Truthy/Falsy Values
+function getBankAccounts() {
+  const accounts = [
+    {
+      id: 1,
+      balance: 2000,
+      firstName: "Ion",
+      lastName: "Popescu",
+      iban: "RO...",
+      branch: "Trilulilu Bucuresti",
+      newAccount: false,
+    },
+    {
+      id: 10,
+      balance: 0,
+      firstName: null,
+      lastName: null,
+      iban: "RO...",
+      branch: "Trilulilu Baia Mare",
+      newAccount: true,
+    },
+  ];
 
-// Array
+  return accounts;
+}
 
 // Common JS Export
 module.exports = {
   bankGreeting,
   withdrawMoney,
+  getBankAccounts,
 };

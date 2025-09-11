@@ -1,4 +1,4 @@
-const { bankGreeting, withdrawMoney } = require("./index"); // Common JS Import
+const { bankGreeting, withdrawMoney, getBankAccounts } = require("./index"); // Common JS Import
 
 describe("when calling bankGreeting function", () => {
   // Inainte de fiecare test
@@ -64,5 +64,49 @@ describe("when calling withdrawMoney function", () => {
 
     expect(result).toEqual(8000); // .toEqual() functioneaza la fel ca .toBe()
     expect(result).toBeLessThan(10000);
+  });
+});
+
+describe("when calling getBankAccounts function", () => {
+  const bankAccounts = getBankAccounts();
+
+  it("all accounts should have id property set and truthy", () => {
+    // exemplu: 2 * 4 (2 = nr de elemente, 4 = nr de assertions)
+    expect.assertions(1 + bankAccounts.length * 4);
+    expect(bankAccounts).toEqual(
+      expect.arrayOf(
+        expect.objectContaining({
+          id: expect.any(Number),
+        })
+      )
+    );
+    for (const account of bankAccounts) {
+      expect(account.id).toBeTruthy();
+      expect(account.id).toBeDefined();
+      expect(account.id).toBeGreaterThan(0);
+      expect(account.id).toBeLessThan(1000000);
+    }
+  });
+
+  it("should be at least one new account", () => {
+    let count = 0;
+
+    for (const account of bankAccounts) {
+      if (account.newAccount) {
+        count = count + 1;
+      }
+    }
+
+    expect.assertions(2);
+    expect(count).toBeTruthy();
+    expect(count).toBeGreaterThan(0);
+  });
+
+  it("for each account the balance should be equal or greater than 0", () => {
+    expect.assertions(bankAccounts.length * 2);
+    for (const account of bankAccounts) {
+      expect(account.balance).not.toBeUndefined();
+      expect(account.balance).toBeGreaterThanOrEqual(0);
+    }
   });
 });
